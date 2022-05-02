@@ -128,6 +128,9 @@ elif trackSelection == 'loose':
 elif trackSelection == 'good':
     stdMu('good', path=main)
     stdPi('good', path=main)
+elif trackSelection == 'higheff':
+    stdMu('higheff', path=main)
+    stdPi('higheff', path=main)
 elif trackSelection == 'user':
     ma.fillParticleList('mu+:user', userCut + ' and ' + muPidCut, path=main)
     ma.fillParticleList('pi+:user', userCut + ' and ' + piPidCut, path=main)
@@ -197,7 +200,7 @@ import variables.collections as vc
 import variables.utils as vu
 
 
-std_vars = vc.mc_truth + vc.kinematics
+std_vars = vc.kinematics
 
 # Variables for final states (electrons, positrons, pions)
 fs_vars = vc.pid + std_vars #vc.track + vc.track_hits
